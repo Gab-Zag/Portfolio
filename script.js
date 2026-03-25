@@ -15,7 +15,6 @@ navLinks.forEach(link => {
 });
 
 window.addEventListener('scroll', () => {
-    // Header shrink
     if(window.scrollY > 80){
         header.classList.add('scrolled');
     } else {
@@ -44,7 +43,6 @@ window.addEventListener('scroll', () => {
         }
     });
 
-    // Skill bars animation
     animateSkillBars();
 });
 
@@ -98,7 +96,7 @@ form.addEventListener('submit', async (e) => {
     btn.disabled = true;
 
     try {
-        const response = await fetch('https://portfolio-back-end-cxe4.onrender.com', {
+        const response = await fetch('https://portfolio-back-end-cxe4.onrender.com/api/contact', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
