@@ -98,7 +98,7 @@ form.addEventListener('submit', async (e) => {
     btn.disabled = true;
 
     try {
-        const response = await fetch('https://SEU-BACKEND.railway.app/api/contact', {
+        const response = await fetch('https://portfolio-back-end-cxe4.onrender.com', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
