@@ -91,19 +91,40 @@ document.head.appendChild(style);
 const form = document.getElementById('contact-form');
 const formSuccess = document.getElementById('form-success');
 
-form.addEventListener('submit', (e) => {
+form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const btn = form.querySelector('.btn');
     btn.textContent = 'Enviando...';
     btn.disabled = true;
-    
-    setTimeout(() => {
+
+    try {
+        const response = await fetch('https://SEU-BACKEND.railway.app/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                name:    document.getElementById('name').value,
+                email:   document.getElementById('email').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value,
+            })
+        });
+
+        if (response.ok) {
+            formSuccess.textContent = '✓ Mensagem enviada com sucesso!';
+            formSuccess.style.color = '#4caf50';
+            form.reset();
+        } else {
+            throw new Error('Erro no servidor');
+        }
+    } catch (err) {
+        formSuccess.textContent = '✗ Erro ao enviar. Tente novamente.';
+        formSuccess.style.color = '#f44336';
+    } finally {
         btn.textContent = 'Enviar Mensagem';
         btn.disabled = false;
-        form.reset();
         formSuccess.classList.add('show');
         setTimeout(() => formSuccess.classList.remove('show'), 4000);
-    }, 1500);
+    }
 });
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
