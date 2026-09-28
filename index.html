@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,11 +17,12 @@
             <a href="#skills">Skills</a>
             <a href="#education">Education</a>
             <a href="#experience">Experience</a>
+            <a href="#awards">Awards</a>
             <a href="#contact">Contact</a>
         </nav>
-        <div class="menu-toggle" id="menu-toggle">
+        <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menu" aria-controls="nav" aria-expanded="false">
             <span></span><span></span><span></span>
-        </div>
+        </button>
     </header>
 
     <section class="home" id="home">
@@ -79,8 +80,10 @@
             <div class="infobar-block infobar-block--stack">
                 <p class="left-label">// stack</p>
                 <div class="home-techs">
-                    <span class="home-tech-tag">Java 21</span>
-                    <span class="home-tech-tag">Spring</span>
+                    <span class="home-tech-tag">Java 25</span>
+                    <span class="home-tech-tag">Spring Boot</span>
+                    <span class="home-tech-tag">Spring Security</span>
+                    <span class="home-tech-tag">Spring Data JPA</span>
                     <span class="home-tech-tag">Docker</span>
                     <span class="home-tech-tag">PostgreSQL</span>
                     <span class="home-tech-tag">REST API</span>
@@ -89,8 +92,21 @@
                     <span class="home-tech-tag">MySQL</span>
                     <span class="home-tech-tag">MongoDB</span>
                     <span class="home-tech-tag">Maven</span>
+                    <span class="home-tech-tag">Apache POI</span>
+                    <span class="home-tech-tag">Google Drive API</span>
+                    <span class="home-tech-tag">React 18</span>
+                    <span class="home-tech-tag">JavaScript</span>
+                    <span class="home-tech-tag">React Query</span>
+                    <span class="home-tech-tag">Axios</span>
+                    <span class="home-tech-tag">Recharts</span>
+                    <span class="home-tech-tag">CSS Modules</span>
+                    <span class="home-tech-tag">Framer Motion</span>
+                    <span class="home-tech-tag">Atomic Design</span>
+                    <span class="home-tech-tag">DDD</span>
+                    <span class="home-tech-tag">Arquitetura Hexagonal</span>
                     <span class="home-tech-tag">Jenkins</span>
                     <span class="home-tech-tag">Kafka</span>
+                    <span class="home-tech-tag">Engenharia de Software</span>
                 </div>
             </div>
 
@@ -203,8 +219,8 @@
                 <div class="timeline-content">
                     <span class="timeline-date">2022 — Atual</span>
                     <h3>Engenharia de Software</h3>
-                    <h4>Faculdade · Cursando</h4>
-                    <p>Formação em Engenharia de Software com ênfase em desenvolvimento de software, banco de dados e metodologias ágeis.</p>
+                    <h4>INATEL · Cursando</h4>
+                    <p>Graduação em Engenharia de Software no INATEL, com formação prática em desenvolvimento de software, algoritmos, estruturas de dados e engenharia de sistemas.</p>
                 </div>
             </div>
             <div class="timeline-item">
@@ -226,6 +242,11 @@
             <div class="section-line"></div>
         </div>
         <div class="experience-grid">
+            <div class="exp-card">
+                <div class="exp-header"><div class="exp-icon"><i class="fa-solid fa-rocket"></i></div><div><span class="exp-date">2026 — Atual</span><h3>Estagiário · Desenvolvedor Full Stack</h3><h4>MIDC / Nokia</h4></div></div>
+                <p>Atuação na criação e evolução de automações para simplificar tarefas internas. No projeto MIDC, desenvolvo uma plataforma que centraliza solicitações, responsáveis, arquivos, revisões, aprovações e indicadores operacionais, transformando processos complexos em um fluxo rastreável e orientado por dados. A solução conta com autenticação JWT, integração com Google Drive, processamento de planilhas e uma suíte automatizada com 79 testes unitários e de integração.</p>
+                <div class="exp-tags"><span>Java 25</span><span>Spring Boot</span><span>React 18</span><span>PostgreSQL</span><span>JWT</span><span>Docker</span><span>Google Drive API</span><span>DDD</span></div>
+            </div>
             <div class="exp-card">
                 <div class="exp-header"><div class="exp-icon"><i class="fa-solid fa-briefcase"></i></div><div><span class="exp-date">2021 — Atual</span><h3>Desenvolvedor Back-end Java</h3><h4>Freelancer / Projetos Pessoais</h4></div></div>
                 <p>Desenvolvimento de APIs RESTful com Spring Boot, integração com bancos de dados PostgreSQL e MySQL, implementação de autenticação JWT e deploy via Docker.</p>
@@ -251,6 +272,43 @@
                 <p>Ministra aulas e orienta estudantes em competições de robótica, desenvolvendo projetos práticos e incentivando a inovação.</p>
                 <div class="exp-tags"><span>C</span><span>ArduinoIDE</span><span>ESP32</span><span>Git</span><span>GitHub</span></div>
             </div>
+        </div>
+    </section>
+
+    <section class="awards" id="awards">
+        <div class="section-header">
+            <p class="section-tag">// conquistas</p>
+            <h2 class="section-title">Conquistas <span>&amp; Prêmios</span></h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="awards-grid">
+            <article class="award-card">
+                <div class="award-position">3º <span>lugar</span></div>
+                <div class="award-icon"><i class="fa-solid fa-trophy"></i></div>
+                <div class="award-content">
+                    <span class="award-year">2024</span>
+                    <h3>Campeonato da ISA</h3>
+                    <p>Robôs Cupim</p>
+                </div>
+            </article>
+            <article class="award-card">
+                <div class="award-position">1º <span>lugar</span></div>
+                <div class="award-icon"><i class="fa-solid fa-medal"></i></div>
+                <div class="award-content">
+                    <span class="award-year">2025</span>
+                    <h3>Campeonato da ISA de Robótica</h3>
+                    <p>Premiação na competição de robótica</p>
+                </div>
+            </article>
+            <article class="award-card">
+                <div class="award-position">1º <span>lugar</span></div>
+                <div class="award-icon"><i class="fa-solid fa-star"></i></div>
+                <div class="award-content">
+                    <span class="award-year">45ª FETIN</span>
+                    <h3>Complexidade Técnica</h3>
+                    <p>Projeto Made by You</p>
+                </div>
+            </article>
         </div>
     </section>
 

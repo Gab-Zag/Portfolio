@@ -6,11 +6,16 @@ const backToTop = document.getElementById('back-to-top');
 
 menuToggle.addEventListener('click', () => {
     nav.classList.toggle('active');
+    const isOpen = nav.classList.contains('active');
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
+    menuToggle.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
 });
 
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
         nav.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Abrir menu');
     });
 });
 
@@ -63,7 +68,7 @@ document.querySelectorAll('.progress').forEach(bar => {
     bar.style.width = '0';
 });
 
-const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+const observerOptions = { threshold: 0.05, rootMargin: '0px 0px -20px 0px' };
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -76,7 +81,9 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.service-card, .timeline-item, .exp-card, .contact-item, .badge').forEach((el, i) => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(30px)';
-    el.style.transition = `opacity 0.5s ease ${i * 0.08}s, transform 0.5s ease ${i * 0.08}s`;
+    // Mantém o efeito em cascata, mas evita atrasos acumulados entre seções.
+    const delay = (i % 5) * 0.04;
+    el.style.transition = `opacity 0.35s ease ${delay}s, transform 0.35s ease ${delay}s`;
     observer.observe(el);
 });
 
